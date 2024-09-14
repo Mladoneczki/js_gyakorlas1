@@ -1,3 +1,4 @@
+import Kartya from "./Kartya.js";
 
 export function cimKiiras(cim){
     const h1Elem=$("header");
@@ -30,16 +31,16 @@ h1Elem.append(`<p>${cim}</p>`)
     
 // }
 
-
-export function egyKutyaKiirasa(kutya){
-    const hely=$(".tartalom")
-    hely.append(`<div class="col-lg-4 col-md-6 card">
-        <h3>${kutya.nev}</h3>
-        <p>${kutya.kor}</p>
-        <p>${kutya.nem}</p>
-        <button class="kivalaszt btn btn-primary" type="button">kiválaszt</button>
-        </div>`)
-}
+// Átkerült a kártya osztályba:
+// export function egyKutyaKiirasa(kutya){
+//     const hely=$(".tartalom")
+//     hely.append(`<div class="col-lg-4 col-md-6 card">
+//         <h3>${kutya.nev}</h3>
+//         <p>${kutya.kor}</p>
+//         <p>${kutya.nem}</p>
+//         <button class="kivalaszt btn btn-primary" type="button">kiválaszt</button>
+//         </div>`)
+// }
 
 // export function osszeskutyaKiirasa(lista){
 //     const hely=$(".tartalom")
@@ -52,10 +53,12 @@ export function egyKutyaKiirasa(kutya){
 //                     </div>`)
 
 // }}
-
-export function osszeskutyaKiirasa(lista){
-    lista.forEach(element => {
-        egyKutyaKiirasa(element)
+// const hely = $(".tartalom");
+// export function osszeskutyaKiirasa(lista){
+    // lista.forEach(element => {
+    //     // egyKutyaKiirasa(element)
+    //     // console.log(element)
+    //     new Kartya(element,hely)
         
-    });
-}
+    // });
+// }
