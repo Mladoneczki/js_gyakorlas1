@@ -30,8 +30,23 @@ cimKiiras(cim);
 
 
 // osszeskutyaKiirasa(kutyaLista);
-
+const kivalasztottLista=[];
+const kivElem=$(".kivalasztott")
 const hely = $(".tartalom");
 
 new Kartyak(kutyaLista,hely)
+
+// amelyik kártyára kattintunk adjuk hozzá a kiválasztottListához
+// Ha el akarunk érni egy privát tagot kell egy getter amit jelen esetben az eseménykor kellene lekérni
+// feliratkozunk a sajat esemenyünkre
+
+$(window).on("kivalaszt", (event)=>{
+console.log(event.detail)
+kivalasztottLista.push(event.detail)
+console.log(kivalasztottLista)
+new Kartyak(kivalasztottLista,kivElem)
+})
+
+
+
 

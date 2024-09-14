@@ -7,13 +7,18 @@ export default class Kartya {
     console.log(kutya)
     this.#kutya=kutya
     this.szuloElem=szuloElem
+    
     this.#egyKutyaKiirasa()
     this.gombElem = $(".kivalaszt:last");
     this.#esemenyKezelo()
   }
   #esemenyKezelo(){
     this.gombElem.on("click", (event) => {
-      console.log(event.target);
+      console.log(this);
+    //   létrehozunk egy saját eseményt
+    const e=new CustomEvent("kivalaszt",{detail:this.#kutya})
+    window.dispatchEvent(e)
+
     });}
 
     // nyíl fügvény és a function között a különbség hogy a this a nyílt fügvény esetén a konkrét osztálypéldányra mítat mig a function esetén a html elemre ami kiváltotta az eseményt
